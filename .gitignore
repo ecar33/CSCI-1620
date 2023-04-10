@@ -1,3 +1,6 @@
-.env/*
 .idea/*
-requirements.txt
+.env/*
+.env
+/env/
+
+g
