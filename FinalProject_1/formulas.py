@@ -1,6 +1,7 @@
-def add(values):
-    print(f'Answer = {sum(values):.2f}')
+import math
 
+def add(values):
+    return math.sum(values)
 
 def subtract(values):
     difference = values[0]
