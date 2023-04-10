@@ -4,8 +4,8 @@ from controller import *
 def main():
     application = QApplication([])
     window = Controller()
-    window.setFixedSize(400, 600)
-    window.setWindowTitle("Test 10")
+    window.setFixedSize(400, 550)
+    window.setWindowTitle("Final Project_1")
     window.show()
     application.exec_()
 
