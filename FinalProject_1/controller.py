@@ -26,14 +26,15 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.divide_pushButton.clicked.connect(lambda: self.determine_function())
 
         self.exponent_pushButton.clicked.connect(lambda: self.determine_function())
-        self.gcf_pushButton.clicked.connect(lambda: self.determine_function())
-        self.radical_pushButton.clicked.connect(lambda: self.determine_function())
+        self.gcd_pushButton.clicked.connect(lambda: self.determine_function())
+        self.modulo_pushButton.clicked.connect(lambda: self.determine_function())
         self.percent_pushButton.clicked.connect(lambda: self.determine_function())
 
     def reset(self):
         self.stackedWidget_result.setCurrentIndex(0)
         self.lineEdit_first_num.setText('')
         self.lineEdit_second_num.setText('')
+        self.lineEdit_first_num.setFocus()
 
     def clock(self):
         # create a function to get the current time in central timezone
@@ -67,14 +68,13 @@ class Controller(QMainWindow, Ui_MainWindow):
         time_thread.daemon = True
         time_thread.start()
 
-
     def check_if_num(self, *args):
-            try:
-                for num in args:
-                    float(num)
-                return True
-            except ValueError:
-                return False
+        try:
+            for num in args:
+                float(num)
+            return True
+        except ValueError:
+            return False
 
     def next_page(self):
 
@@ -103,15 +103,17 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.exponent()
             case "Percent":
                 self.percent()
-            case "GCF":
-                self.gcf()
+            case "GCD":
+                self.gcd()
+            case "Modulo":
+                self.modulo()
 
     def add(self):
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
 
-        if self.check_if_num(x,y):
+        if self.check_if_num(x, y):
             self.stackedWidget_result.setCurrentIndex(1)
             x = round(float(x), 2)
             y = round(float(y), 2)
@@ -131,10 +133,11 @@ class Controller(QMainWindow, Ui_MainWindow):
             x = round(float(x), 2)
             y = round(float(y), 2)
             result = x - y
-            result_text = f'{x} - {y} = {result}'
+            result_text = f'{x} - {y} = {result:.2f}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)
+
     def multiply(self):
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
@@ -145,10 +148,11 @@ class Controller(QMainWindow, Ui_MainWindow):
             x = round(float(x), 2)
             y = round(float(y), 2)
             result = x * y
-            result_text = f'{x} * {y} = {result}'
+            result_text = f'{x} * {y} = {result:.2f}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)
+
     def divide(self):
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
@@ -159,7 +163,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             x = round(float(x), 2)
             y = round(float(y), 2)
             result = x / y
-            result_text = f'{x} / {y} = {result}'
+            result_text = f'{x} / {y} = {result:.2f}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)
@@ -169,38 +173,27 @@ class Controller(QMainWindow, Ui_MainWindow):
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
 
-        if self.check_if_num(x,y) and (float(y) >= 0):
+        if self.check_if_num(x, y):
             self.stackedWidget_result.setCurrentIndex(1)
             x = round(float(x), 2)
             y = math.floor(float(y))
             result = math.pow(x, y)
-            result_text = f'{x}^{y} = {result}'
+            result_text = f'{x}^{y} = {result:.2f}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)
 
-    def gcf(self):
+    def gcd(self):
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
 
-        if self.check_if_num(x,y):
+        if self.check_if_num(x, y):
             self.stackedWidget_result.setCurrentIndex(1)
-            result = float(x) + float(y)
-            result_text = f'{float(x):} + {float(y):} = {result:}'
-            self.label_result.setText(result_text)
-        else:
-            self.stackedWidget_result.setCurrentIndex(2)
-
-    def radical(self):
-        self.stackedWidget_functions.setCurrentIndex(1)
-        x = self.lineEdit_first_num.text()
-        y = self.lineEdit_second_num.text()
-
-        if self.check_if_num(x,y):
-            self.stackedWidget_result.setCurrentIndex(1)
-            result = float(x) + float(y)
-            result_text = f'{float(x):} + {float(y):} = {result:}'
+            x = math.floor(float(x))
+            y = math.floor(float(y))
+            result = math.gcd(x, y)
+            result_text = f'GCD of {x} and {y} = {result}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)
@@ -210,10 +203,27 @@ class Controller(QMainWindow, Ui_MainWindow):
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
 
-        if self.check_if_num(x,y):
+        if self.check_if_num(x, y):
             self.stackedWidget_result.setCurrentIndex(1)
-            result = float(x) + float(y)
-            result_text = f'{float(x)} + {float(y)} = {result}'
+            x = round(float(x), 2)
+            y = round(float(y), 2)
+            result = x * (y / 100)
+            result_text = f'{y}% of {x} = {result:.2f}'
+            self.label_result.setText(result_text)
+        else:
+            self.stackedWidget_result.setCurrentIndex(2)
+
+    def modulo(self):
+        self.stackedWidget_functions.setCurrentIndex(1)
+        x = self.lineEdit_first_num.text()
+        y = self.lineEdit_second_num.text()
+
+        if self.check_if_num(x, y):
+            self.stackedWidget_result.setCurrentIndex(1)
+            x = round(float(x), 2)
+            y = round(float(y), 2)
+            result = x % y
+            result_text = f'{x} % {y} = {result:.2f}'
             self.label_result.setText(result_text)
         else:
             self.stackedWidget_result.setCurrentIndex(2)

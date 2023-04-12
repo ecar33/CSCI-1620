@@ -130,7 +130,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_4">
        <widget class="QLabel" name="label_8">
@@ -233,313 +233,41 @@ color: rgb(0, 0, 0);</string>
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="page_8">
-         <widget class="QStackedWidget" name="stackedWidget_result_2">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>80</y>
-            <width>261</width>
-            <height>80</height>
-           </rect>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="page_9">
-           <widget class="QLabel" name="label_12">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>134</width>
-              <height>25</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <family>Yu Gothic UI Light</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_3">
-            <property name="geometry">
-             <rect>
-              <x>-50</x>
-              <y>-190</y>
-              <width>311</width>
-              <height>101</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <family>Yu Gothic UI Light</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Simple Calculator</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </widget>
-          <widget class="QWidget" name="page_10">
-           <widget class="QWidget" name="layoutWidget_2">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>30</y>
-              <width>231</width>
-              <height>36</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_13">
-               <property name="font">
-                <font>
-                 <family>Yu Gothic UI Semilight</family>
-                 <pointsize>10</pointsize>
-                 <weight>50</weight>
-                 <italic>true</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-
-</string>
-               </property>
-               <property name="text">
-                <string>Result:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_result_2">
-               <property name="font">
-                <font>
-                 <family>Yu Gothic UI Semilight</family>
-                 <pointsize>10</pointsize>
-                 <weight>50</weight>
-                 <italic>true</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-
-</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-          <widget class="QWidget" name="page_11">
-           <widget class="QLabel" name="label_14">
-            <property name="geometry">
-             <rect>
-              <x>70</x>
-              <y>10</y>
-              <width>133</width>
-              <height>42</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <family>Yu Gothic UI Semilight</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <italic>true</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-
-</string>
-            </property>
-            <property name="text">
-             <string>Please enter 2 valid 
-numbers.</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="layoutWidget_3">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>275</width>
-            <height>58</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_15">
-             <property name="font">
-              <font>
-               <family>Yu Gothic UI Light</family>
-               <pointsize>9</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
-</string>
-             </property>
-             <property name="text">
-              <string>First Number:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="lineEdit_first_num_2"/>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_16">
-             <property name="font">
-              <font>
-               <family>Yu Gothic UI Light</family>
-               <pointsize>9</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
-</string>
-             </property>
-             <property name="text">
-              <string>Second Number:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="lineEdit_second_num_2"/>
-           </item>
-          </layout>
-         </widget>
-        </widget>
+        <widget class="QWidget" name="page_8"/>
         <widget class="QWidget" name="page_12"/>
        </widget>
       </widget>
       <widget class="QWidget" name="page_6">
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QLabel" name="label_result">
         <property name="geometry">
          <rect>
           <x>20</x>
           <y>30</y>
-          <width>231</width>
-          <height>36</height>
+          <width>221</width>
+          <height>41</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="font">
-            <font>
-             <family>Yu Gothic UI Semilight</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>true</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
+        <property name="font">
+         <font>
+          <family>Yu Gothic UI Semilight</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 
 </string>
-           </property>
-           <property name="text">
-            <string>Result:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_result">
-           <property name="font">
-            <font>
-             <family>Yu Gothic UI Semilight</family>
-             <pointsize>10</pointsize>
-             <weight>75</weight>
-             <italic>false</italic>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-
-</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="page_5">
@@ -617,6 +345,9 @@ numbers.</string>
            <family>Yu Gothic UI Semilight</family>
           </font>
          </property>
+         <property name="cursorPosition">
+          <number>0</number>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
@@ -658,7 +389,6 @@ numbers.</string>
       <zorder>label_6</zorder>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_2"/>
    </widget>
    <widget class="QPushButton" name="reset_pushButton">
     <property name="geometry">
@@ -822,7 +552,7 @@ numbers.</string>
        <string>Exponent</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="gcf_pushButton">
+     <widget class="QPushButton" name="gcd_pushButton">
       <property name="geometry">
        <rect>
         <x>9</x>
@@ -837,32 +567,14 @@ numbers.</string>
        </font>
       </property>
       <property name="text">
-       <string>GCF</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="radical_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>10</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Segoe UI Light</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Radical</string>
+       <string>GCD</string>
       </property>
      </widget>
      <widget class="QPushButton" name="percent_pushButton">
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>39</y>
+        <y>10</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -892,6 +604,24 @@ numbers.</string>
       </property>
       <property name="text">
        <string>-&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="modulo_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>39</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI Light</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Modulo</string>
       </property>
      </widget>
     </widget>
