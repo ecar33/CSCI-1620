@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import test_rc
 
 
 class Ui_MainWindow(object):
@@ -324,7 +325,7 @@ class Ui_MainWindow(object):
         self.percent_pushButton.setText(_translate("MainWindow", "Percent"))
         self.pushButton_page_2.setText(_translate("MainWindow", "->"))
         self.modulo_pushButton.setText(_translate("MainWindow", "Modulo"))
-import test_rc
+
 
 
 if __name__ == "__main__":
