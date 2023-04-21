@@ -12,4 +12,3 @@ pytz==2023.3
 pywin32-ctypes==0.2.0
 qt5-applications==5.15.2.2.3
 qt5-tools==5.15.2.1.3
-
