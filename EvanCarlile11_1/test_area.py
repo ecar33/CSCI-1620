@@ -8,6 +8,8 @@ class TestCase(unittest.TestCase):
         self.assertAlmostEqual(a.square(33.33), 1110.8889, 5)
         self.assertRaises(ValueError, a.square, "foo")
         self.assertRaises(TypeError, a.square, -3)
+        self.assertRaises(TypeError, a.square, 0)
+        self.assertRaises(TypeError, a.circle, -6.33)
 
     def test_circle(self):
         self.assertAlmostEqual(a.circle(2), 12.56637, 5)
@@ -30,6 +32,7 @@ class TestCase(unittest.TestCase):
         self.assertRaises(TypeError, a.rectangle, -2, 3)
         self.assertRaises(TypeError, a.rectangle, 0, 1)
         self.assertRaises(TypeError, a.rectangle, 1, 0)
+        self.assertRaises(TypeError, a.rectangle, 0, 0)
 
     def test_triangle(self):
         self.assertEqual(a.triangle(2, 2), 2)
@@ -44,6 +47,7 @@ class TestCase(unittest.TestCase):
         self.assertRaises(TypeError, a.triangle, -1, 1)
         self.assertRaises(TypeError, a.triangle, 0, 1)
         self.assertRaises(TypeError, a.triangle, 1, 0)
+        self.assertRaises(TypeError, a.triangle, 0, 0)
 
 
 def main():

@@ -1,6 +1,5 @@
 from gui import *
 
-
 def main():
     window = Tk()
     window.title('Lab 11')
