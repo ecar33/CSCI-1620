@@ -11,6 +11,13 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.ApplicationAttribute.AA_UseHighDpi
 
 
 class Controller(QMainWindow, Ui_MainWindow):
+    """
+        A class used to control the Calculator GUI.
+
+        This class provides methods for handling user input, performing calculations,
+        and updating the UI. See individual method docstrings for more information.
+
+    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
@@ -31,15 +38,30 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.percent_pushButton.clicked.connect(lambda: self.determine_function())
 
     def reset(self):
+        """
+        Resets the input fields and the result display.
+        """
+
         self.stackedWidget_result.setCurrentIndex(0)
         self.lineEdit_first_num.setText('')
         self.lineEdit_second_num.setText('')
         self.lineEdit_first_num.setFocus()
 
     def clock(self):
+        """
+        Starts a clock that displays the current time in the central timezone.
+        """
+
         # create a function to get the current time in central timezone
         def get_central_time():
-            # get the current time in UTC timezone
+            """
+            Gets the current time in central timezone.
+
+            Returns
+            -------
+            central_time : datetime
+                The current time in the 'America/Chicago' timezone.
+            """
             local_time = datetime.datetime.now()
 
             # convert UTC time to central timezone
@@ -50,6 +72,9 @@ class Controller(QMainWindow, Ui_MainWindow):
 
         # create a function to continuously update the time
         def update_time():
+            """
+            Continuously updates the time every second.
+            """
             while True:
                 # get the current time in central timezone
                 current_time = get_central_time()
@@ -69,6 +94,19 @@ class Controller(QMainWindow, Ui_MainWindow):
         time_thread.start()
 
     def check_if_num(self, *args):
+        """
+            Checks if all arguments can be converted to a float.
+
+            Parameters
+            ----------
+            *args : Variable length argument list.
+                The arguments to be checked.
+
+            Returns
+            -------
+            bool
+                True if all arguments can be converted to a float, False otherwise.
+        """
         try:
             for num in args:
                 float(num)
@@ -77,6 +115,13 @@ class Controller(QMainWindow, Ui_MainWindow):
             return False
 
     def next_page(self):
+        """
+            Changes the displayed page in the QStackedWidget to the next one.
+
+            It gets the current index and total number of pages in the QStackedWidget,
+            increments the index and wraps around if necessary, then sets the new index
+            for the QStackedWidget.
+        """
 
         # Get the current index and total number of pages in the QStackedWidget
         current_index = self.stackedWidget_options.currentIndex()
@@ -89,6 +134,10 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.stackedWidget_options.setCurrentIndex(next_index)
 
     def determine_function(self):
+        """
+        Determines the mathematical operation to be performed based on the button pressed.
+        """
+
         chosen_function = self.sender().text()
         match chosen_function:
             case "Add":
@@ -109,6 +158,14 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.modulo()
 
     def add(self):
+        """
+        Performs an addition operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        performs the addition, and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -124,6 +181,14 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def subtract(self):
+        """
+        Performs a subtraction operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        performs the subtraction, and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -139,6 +204,14 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def multiply(self):
+        """
+        Performs a multiplication operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        performs the multiplication, and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -154,6 +227,15 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def divide(self):
+        """
+        Performs a division operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers and
+        the divisor is not zero, performs the division, and displays the result in the
+        QStackedWidget. If the inputs are not valid numbers or the divisor is zero, it
+        switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -169,6 +251,15 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def exponent(self):
+        """
+        Performs an exponentiation operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        performs the exponentiation (raising the first number to the power of the second),
+        and displays the result in the QStackedWidget. If the inputs are not valid numbers,
+        it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -184,6 +275,14 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def gcd(self):
+        """
+        Calculates the Greatest Common Divisor (GCD) of the two numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        calculates the GCD, and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -199,6 +298,14 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def percent(self):
+        """
+        Calculates the percentage of the first number entered by the user relative to the second number.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        calculates the percentage, and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
@@ -214,6 +321,15 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.stackedWidget_result.setCurrentIndex(2)
 
     def modulo(self):
+        """
+        Performs a modulo operation on the numbers entered by the user.
+
+        It takes the numbers from the input fields, verifies if they are valid numbers,
+        performs the modulo operation (calculating the remainder of the division of the first
+        number by the second), and displays the result in the QStackedWidget. If the inputs
+        are not valid numbers, it switches to the error page in the QStackedWidget.
+        """
+
         self.stackedWidget_functions.setCurrentIndex(1)
         x = self.lineEdit_first_num.text()
         y = self.lineEdit_second_num.text()
